@@ -1,0 +1,63 @@
+<?xml version='1.0'?>
+<web-app xmlns='http://forge.ada-ru.org/matreshka/xml/ns/spikedogdd'>
+  <library-name>mimsy</library-name>
+
+  <servlet>
+    <servlet-name>StaticResource</servlet-name>
+    <servlet-tag>AWFC.STATIC_RESOURCE_SERVLETS.STATIC_RESOURCE_SERVLET</servlet-tag>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StaticResource</servlet-name>
+    <url-pattern>/game/*</url-pattern>
+    <url-pattern>*.css</url-pattern>
+    <url-pattern>*.xml</url-pattern>
+    <url-pattern>*.png</url-pattern>
+    <url-pattern>*.jpg</url-pattern>
+    <url-pattern>*.txt</url-pattern>
+    <url-pattern>*.js</url-pattern>
+    <url-pattern>*.json</url-pattern>
+    <url-pattern>*.ico</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>OAuth</servlet-name>
+    <url-pattern>/oauth2/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Compile</servlet-name>
+    <servlet-tag>SERVLET.COMPILE.COMPILE_SERVLET</servlet-tag>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Compile</servlet-name>
+    <url-pattern>/compile</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Solution</servlet-name>
+    <servlet-tag>SERVLET.GAME_SOLUTIONS.SOLUTION_SERVLET</servlet-tag>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Solution</servlet-name>
+    <url-pattern>/game/code/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Mission</servlet-name>
+    <servlet-tag>SERVLET.GAME_MISSIONS.MISSION_SERVLET</servlet-tag>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Mission</servlet-name>
+    <url-pattern>/game/mission</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Station</servlet-name>
+    <servlet-tag>SERVLET.GAME_STATIONS.STATION_SERVLET</servlet-tag>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Station</servlet-name>
+    <url-pattern>/game/station</url-pattern>
+  </servlet-mapping>
+
+</web-app>

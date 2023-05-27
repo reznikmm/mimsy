@@ -1,0 +1,133 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:mtl="http://forge.ada-ru.org/matreshka/template">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+  <meta charset="utf-8"/>
+  <meta name="KeyWords" content="Ada programming contest, Турнир по языку Ада"/>
+  <meta name="description" content="${context.short_description}"/>
+  <meta property="og:url"          content="https://www.ada-ru.org/game/${context.slug}.html"/>
+  <meta property="og:title"        content="Station: ${context.name}"/>
+  <meta property="og:description"  content="${context.short_description}"/>
+  <meta property="og:image"        content="https://www.ada-ru.org/game/svg/${context.svg}.svg"/>
+  <meta property="og:type"         content="article"/>
+  <meta property="og:locale"       content="en"/>
+  <meta property="fb:app_id"       content="994592483896446"/>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@ReznikMaxim" />
+  <meta name="twitter:title" content="Station: ${context.name}" />
+  <meta name="twitter:description" content="${context.short_description}" />
+  <meta name="twitter:image" content="https://www.ada-ru.org/game/svg/${context.svg}.svg"/>
+  <meta name="google-site-verification" content="VFsKvtWDSjtwpDm4ZL9cb2ESsYtiNsAOO3zh-vNjAWY" />
+  <title>Station: ${context.name} - Ada coding challenges</title>
+  <!--- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/graphics/apple-touch-icon.png"/>
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/game/svg/${context.svg}.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/graphics/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/graphics/favicon-16x16.png"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <link rel="mask-icon" href="/game/svg/${context.svg}.svg" color="#634421"/>
+  <link rel="shortcut icon" href="/favicon.ico"/>
+  <meta name="msapplication-TileColor" content="#fffae8"/>
+  <meta name="msapplication-config" content="/browserconfig.xml"/>
+  <meta name="theme-color" content="#fffae8"/>
+  <!--- CSS and Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="mission.css" type="text/css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="pure-min.css"/>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18973607-5']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+  <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
+    <meta itemprop="headline" content="Station: ${context.name}" />
+    <meta itemprop="inLanguage" content="en" />
+
+    <div id="layout">
+        <!-- Menu toggle -->
+        <input type="checkbox" id="menu_checkbox"/>
+        <div id="header">
+            <!-- Hamburger icon -->
+            <label for="menu_checkbox"><i class="fas fa-bars"></i></label>
+        </div>
+        <div id="menu">
+          <div class="pure-menu">
+            <a id="station" class="pure-menu-heading" href="/game/${context.slug}.html">
+              <img class="station-icon" src="/game/svg/${context.svg}.svg" alt="${context.name}"/>
+              ${context.name}
+            </a>
+            <ul class="pure-menu-list">
+              <li class="pure-menu-item"><a href="/game/index.html" class="pure-menu-link"><i class="fas fa-home"></i> Home</a></li>
+              <li class="pure-menu-item">
+                <input id="known_user" type="checkbox"/>
+                <a id="user" class="pure-menu-link" href="#"><i class="fas fa-user"></i> Profile</a>
+                <a id="login" class="pure-menu-link" href="/oauth2?path=/game/${context.slug}.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+              </li>
+              <li class="pure-menu-item"><a href="/forum" class="pure-menu-link"><i class="fas fa-book-reader"></i> Forum</a></li>
+            </ul>
+          </div>
+          <div>
+            <hr/>
+            Score for solving: ${context.points}
+          </div>
+        </div>
+        <div id="main">
+            <div class="header">
+                <h1>
+                    <img src="/game/svg/${context.svg}.svg" alt="${context.name}" class="mission-icon"/> ${context.name}
+                    <br/>
+                    <progress id="station-progress" max="${context.count}" value="0"></progress>
+                </h1>
+                <h2>${context.short_description}</h2>
+            </div>
+            <div class="content">
+                <mtl:for expression="mission of context.missions">
+                    <div class="mission">
+                        <h2>
+                            <img src="/game/svg/${mission.svg}.svg" alt="${mission.title}" class="mission-icon" /> ${mission.title}
+                            <span class="align-right">${mission.points} <i class="fas fa-battery-${mission.power}"></i></span>
+                        </h2>
+                        <p>
+                            <span class="solved align-right">
+                                <input id="${mission.slug}" type="checkbox"/>
+                                <i class="fas fa-check"></i>
+                            </span>
+                            ${mission.short_description}
+                            <br />
+                            <span>
+                                <a href="en/${mission.slug}.html">en</a>
+                                <mtl:for expression="lang of mission.langs">
+                                    <a href="${lang}/${mission.slug}.html">${lang}</a>
+                                </mtl:for>
+                            </span>
+                        </p>
+                    </div>
+                </mtl:for>
+            </div>
+        </div>
+    </div>
+    <script src="/js/require.js"/>
+    <script>
+      require.config({xhtml:false, baseUrl: '/js'});
+      require(['logins'], function(logins) { logins.start(); });
+    </script>
+    <script>
+fetch(`$${document.location.protocol}//$${document.location.host}/game/station?station=${context.slug}`)
+  .then(response => response.json())
+  .then(json => {
+      var progress = document.getElementById('station-progress');
+      json.forEach (item => {
+        document.getElementById(item).checked = true;
+        progress.value++;
+      });
+  });
+    </script>
+  </body>
+</html>

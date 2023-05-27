@@ -1,0 +1,40 @@
+name = "mimsy"
+description = "Solution editor in Ada"
+version = "0.1.0-dev"
+
+authors = ["Max Reznik"]
+maintainers = ["Max Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+project-files = ["gnat/mimsy.gpr"]
+
+[configuration]
+output_dir = "gnat"
+generate_ada = false
+generate_c = false
+
+[build-switches]
+development.optimization = ["-O0"]
+development.style_checks = ["-gnaty"]
+development.contracts = "Yes"
+
+[gpr-set-externals]
+LIBRARY_TYPE="relocatable"
+
+[[depends-on]]
+matreshka_league = ">=21.0.0"
+matreshka_servlet = ">=21.0.0"
+matreshka_spikedog_api = ">=21.0.0"
+matreshka_spikedog_core = ">=21.0.0"
+matreshka_sql = ">=21.0.0"
+matreshka_sql_postgresql = ">=21.0.0"
+matreshka_xml = ">=21.0.0"
+aws = "*"
+
+[[pins]]
+matreshka_league = { path='../matreshka/packages/alire/matreshka_league' }
+matreshka_servlet = { path='../matreshka/packages/alire/matreshka_servlet' }
+matreshka_spikedog_api = { path='../matreshka/packages/alire/matreshka_spikedog_api' }
+matreshka_spikedog_core = { path='../matreshka/packages/alire/matreshka_spikedog_core' }
+matreshka_sql = { path='../matreshka/packages/alire/matreshka_sql' }
+matreshka_sql_postgresql = { path='../matreshka/packages/alire/matreshka_sql_postgresql' }
+matreshka_xml = { path='../matreshka/packages/alire/matreshka_xml' }

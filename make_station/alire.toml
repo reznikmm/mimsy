@@ -1,0 +1,18 @@
+name = "make_station"
+description = "A mission creation tool"
+version = "0.1.0-dev"
+
+authors = ["Max Reznik"]
+maintainers = ["Max Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+
+executables = ["make_station"]
+
+[[depends-on]]
+ada_pretty = "^1.0.0"
+matreshka_league = "*"
+matreshka_xml = "*"
+
+[[pins]]
+matreshka_league = { path='../../matreshka/packages/alire/matreshka_league' }
+matreshka_xml = { path='../../matreshka/packages/alire/matreshka_xml' }

@@ -1,0 +1,28 @@
+--  SPDX-FileCopyrightText: 2023 Max Reznik <reznikmm@gmail.com>
+--
+--  SPDX-License-Identifier: MIT
+----------------------------------------------------------------
+
+with "config/make_station_config.gpr";
+project Make_Station is
+
+   for Source_Dirs use ("src/", "config/");
+   for Object_Dir use "obj/" & Make_Station_Config.Build_Profile;
+   for Create_Missing_Dirs use "True";
+   for Exec_Dir use "bin";
+   for Main use ("make_station.adb");
+
+   package Compiler is
+      for Default_Switches ("Ada") use
+	Make_Station_Config.Ada_Compiler_Switches & ("-gnatW8");
+   end Compiler;
+
+   package Binder is
+      for Switches ("Ada") use ("-Es"); --  Symbolic traceback
+   end Binder;
+
+   package Install is
+      for Artifacts (".") use ("share");
+   end Install;
+
+end Make_Station;
