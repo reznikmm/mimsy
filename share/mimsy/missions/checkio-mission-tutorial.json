@@ -1,0 +1,17 @@
+{
+  "title": "Multiply (Intro)",
+  "slug": "multiply-intro",
+  "points": "5",
+  "power": "empty",
+  "svg": "info",
+  "station": "library",
+  "replace": [
+    {"from": "{% if ", "to": " else %}", "text": "", "count": 3},
+    {"from": "{% endif %}", "to": "endif %}", "text": "", "count": 3},
+    {"from": "{{MEDIA}}", "to": "}}", "text": "../multiply-intro/", "count": 2},
+    {"from": "<pre class=\"brush: python\">\n",
+     "to": "</pre>",
+     "text": "<pre><code class='language-ada'>\nfunction Mult_Two (A, B : Integer) return Integer is\nbegin\n   return A * B;\nend Mult_Two;\n</code></pre>\n"
+    }
+  ]
+}
