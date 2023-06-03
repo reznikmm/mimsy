@@ -21,6 +21,7 @@ development.contracts = "Yes"
 LIBRARY_TYPE="relocatable"
 
 [[depends-on]]
+aws = "<23.0.0"
 matreshka_league = ">=21.0.0"
 matreshka_servlet = ">=21.0.0"
 matreshka_spikedog_api = ">=21.0.0"
@@ -28,7 +29,6 @@ matreshka_spikedog_core = ">=21.0.0"
 matreshka_sql = ">=21.0.0"
 matreshka_sql_postgresql = ">=21.0.0"
 matreshka_xml = ">=21.0.0"
-aws = "*"
 
 [[pins]]
 matreshka_league = { path='../matreshka/packages/alire/matreshka_league' }
