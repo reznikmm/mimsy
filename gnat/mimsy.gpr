@@ -21,8 +21,13 @@ project Mimsy is
 
    type Library_Type_Type is ("relocatable", "static", "static-pic");
    Library_Type : Library_Type_Type :=
-     external ("MIMSY_LIBRARY_TYPE", external ("LIBRARY_TYPE", "static"));
+     external ("MIMSY_LIBRARY_TYPE", external ("LIBRARY_TYPE", "relocatable"));
    for Library_Kind use Library_Type;
+
+   for Library_Interface use
+    ("Mimsy",
+     "Mimsy.Startup",
+     "Mimsy.Startup.Hook");
 
    package Compiler is
       for Default_Switches ("Ada") use Mimsy_Config.Ada_Compiler_Switches;
