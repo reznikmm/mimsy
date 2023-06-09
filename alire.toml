@@ -29,6 +29,7 @@ matreshka_spikedog_core = ">=21.0.0"
 matreshka_sql = ">=21.0.0"
 matreshka_sql_postgresql = ">=21.0.0"
 matreshka_xml = ">=21.0.0"
+jwt = "*"
 
 [[pins]]
 matreshka_league = { path='../matreshka/packages/alire/matreshka_league' }
@@ -38,3 +39,5 @@ matreshka_spikedog_core = { path='../matreshka/packages/alire/matreshka_spikedog
 matreshka_sql = { path='../matreshka/packages/alire/matreshka_sql' }
 matreshka_sql_postgresql = { path='../matreshka/packages/alire/matreshka_sql_postgresql' }
 matreshka_xml = { path='../matreshka/packages/alire/matreshka_xml' }
+[[pins]]
+jwt = { url='https://github.com/reznikmm/jwt.git', branch='master' }

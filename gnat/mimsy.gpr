@@ -4,6 +4,8 @@
 ----------------------------------------------------------------
 
 with "mimsy_config.gpr";
+with "gnat/jwt.gpr";  --  FIXME: Add alire.toml to JWT
+
 project Mimsy is
 
    for Library_Name use "mimsy";

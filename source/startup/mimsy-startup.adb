@@ -8,14 +8,10 @@ with Ada.Text_IO;
 with AWFC.Static_Resource_Servlets;
 pragma Unreferenced (AWFC.Static_Resource_Servlets);
 with Servlet.OAuth;
+with Servlet.OAuth2_Server;
+pragma Unreferenced (Servlet.OAuth2_Server);
 --  with Servlet.Users;
 --  pragma Unreferenced (Servlet.Users);
---  with Servlet.Telegram;
---  with Servlet.Viber;
---  with Servlet.Forum;
---  pragma Unreferenced (Servlet.Forum);
---  with Servlet.Pastebin;
---  pragma Unreferenced (Servlet.Pastebin);
 with Servlet.Compile;
 pragma Unreferenced (Servlet.Compile);
 with Servlet.Game_Solutions;
@@ -25,13 +21,9 @@ pragma Unreferenced (Servlet.Game_Missions);
 with Servlet.Game_Stations;
 pragma Unreferenced (Servlet.Game_Stations);
 
---  with Axe.Wiki_View_Servlets;
-
 with Matreshka.Internals.SQL_Drivers.PostgreSQL.Factory;
 pragma Unreferenced (Matreshka.Internals.SQL_Drivers.PostgreSQL.Factory);
 
---  with Axe.Events.Logs;
---  with XMPP.Sessions;
 --  with League.Holders;
 --  with League.Settings;
 with League.Strings;

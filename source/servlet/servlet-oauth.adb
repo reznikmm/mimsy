@@ -368,9 +368,10 @@ package body Servlet.OAuth is
                Decode_Facebook_Token (Token, Info);
             elsif Path = +"/github" then
                Decode_Github_Token (Token, Info);
-            elsif Path = +"/dropbox" then
-               Info.User := +"dropbox";
-               Info.Name := Token;
+            elsif Path = +"/mimsy" then
+               Info.User := +"user-1";
+               Info.Name := +"User";
+               EMail := +"user@localhost";
             end if;
 
             if not EMail.Is_Empty then
@@ -531,9 +532,7 @@ package body Servlet.OAuth is
          Add_OAuth_Provider (Result.OAuth_Providers, +"facebook", Settings);
          Add_OAuth_Provider (Result.OAuth_Providers, +"github", Settings);
          Add_OAuth_Provider (Result.OAuth_Providers, +"google", Settings);
-         Add_OAuth_Provider (Result.OAuth_Providers, +"vk", Settings);
-         Add_OAuth_Provider (Result.OAuth_Providers, +"mailru", Settings);
-         Add_OAuth_Provider (Result.OAuth_Providers, +"dropbox", Settings);
+         Add_OAuth_Provider (Result.OAuth_Providers, +"mimsy", Settings);
       end return;
    end Instantiate;
 
